@@ -2,12 +2,15 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+
 class HomeController extends BaseController
 {
     public function index()
     {
-        $data = 'Hello';
+        $users = new User();
+        $users = $users->get();
 
-        $this->view("home",['data' => $data]);
+        $this->view("home",['users' => $users]);
     }
 }

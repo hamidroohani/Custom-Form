@@ -43,7 +43,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Admin', 'admin@example.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, '2021-07-14 13:29:45', '2021-07-14 13:29:45');
+(1, 'SuperAdmin', 'super-admin@example.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(2, 'Admin', 'admin@example.com', 'e10adc3949ba59abbe56e057f20f883e', NULL, '2024-04-14 13:29:45', '2024-04-14 13:29:45');
 
 --
 -- Indexes for dumped tables
@@ -85,7 +86,14 @@ CREATE TABLE `orders` (
 --
 -- Indexes for dumped orders
 --
-
+INSERT INTO `orders` (`id`, `user_id`, `title`, `count`, `address`, `created_at`, `updated_at`) VALUES
+(1, 1, 'product-1', '10', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(2, 1, 'product-2', '5', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(3, 1, 'product-3', '2', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(4, 1, 'product-4', '100', 'Iran', '2024-04-14 14:29:45', '2024-04-14 14:29:45'),
+(5, 1, 'product-5', '3', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(6, 1, 'product-6', '8', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45'),
+(7, 2, 'product-1', '8', 'Iran', '2024-04-14 13:29:45', '2024-04-14 13:29:45');
 --
 -- Indexes for table `orders`
 --

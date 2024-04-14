@@ -7,10 +7,16 @@
                 Title
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                User Name
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Count
             </th>
             <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                 Address
+            </th>
+            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                Created At
             </th>
         </tr>
         </thead>
@@ -21,10 +27,16 @@
                     <?= $order['title'] ?>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
+                    <?= $order['name'] . " - " . $order['email'] ?>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
                     <?= $order['count'] ?>
                 </td>
                 <td class="px-6 py-4 whitespace-nowrap">
                     <?= $order['address'] ?>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <?= $order['created_at'] ?>
                 </td>
             </tr>
         <?php } ?>
