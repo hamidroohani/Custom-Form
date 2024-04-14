@@ -2,13 +2,16 @@
 
 namespace App\Controllers;
 
+use App\Models\User;
+
 class UserController extends BaseController
 {
     public function index()
     {
-        $data = 'List of Users';
+        $users = new User();
+        $users = $users->get();
 
-        $this->view("users/list",['data' => $data]);
+        $this->view("users/list",['users' => $users]);
     }
 
     public function create()
@@ -32,6 +35,13 @@ class UserController extends BaseController
             $this->redirect('/users/create');
         }
 
-        $this->view("users");
+        $user = new User();
+        $user->create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'password' => md5($request['password']),
+        ]);
+
+        $this->redirect('/users');
     }
 }

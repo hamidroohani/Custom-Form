@@ -15,28 +15,19 @@
         </tr>
         </thead>
         <tbody class="bg-white divide-y divide-gray-200">
-        <tr>
-            <td class="px-6 py-4 whitespace-nowrap">
-                John Doe
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                john@example.com
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                Developer
-            </td>
-        </tr>
-        <tr>
-            <td class="px-6 py-4 whitespace-nowrap">
-                Jane Smith
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                jane@example.com
-            </td>
-            <td class="px-6 py-4 whitespace-nowrap">
-                Designer
-            </td>
-        </tr>
+        <?php foreach ($users as $user){ ?>
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <?= $user['name'] ?>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <?= $user['email'] ?>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    Developer
+                </td>
+            </tr>
+        <?php } ?>
         </tbody>
     </table>
 </div>
