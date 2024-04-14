@@ -17,6 +17,11 @@ class Kernel
         $router->add("GET", "users", \App\Controllers\UserController::class, "index");
         $router->add("GET", "users/create", \App\Controllers\UserController::class, "create");
         $router->add("POST", "users/store", \App\Controllers\UserController::class, "store");
+        $router->add("POST", "users/find", \App\Controllers\UserController::class, "find");
+
+        $router->add("GET", "orders", \App\Controllers\OrderController::class, "index");
+        $router->add("GET", "orders/create", \App\Controllers\OrderController::class, "create");
+        $router->add("POST", "orders/store", \App\Controllers\OrderController::class, "store");
 
         try {
             echo $router->dispatch();

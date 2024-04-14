@@ -13,10 +13,10 @@
         <div class="text-white font-bold text-xl">Custom Form</div>
         <ul class="flex space-x-4">
             <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
-            <li><a href="#" class="text-white hover:text-gray-300">Orders</a></li>
+            <li><a href="/orders" class="text-white hover:text-gray-300">Orders</a></li>
             <li><a href="/users" class="text-white hover:text-gray-300">Users</a></li>
             <li><a href="/users/create" class="text-white hover:text-gray-300">Add User</a></li>
-            <li><a href="#" class="text-white hover:text-gray-300">Add Order</a></li>
+            <li><a href="/orders/create" class="text-white hover:text-gray-300">Add Order</a></li>
         </ul>
     </div>
 </nav>

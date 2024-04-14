@@ -48,6 +48,13 @@ abstract class DB
         return $this;
     }
 
+    public function limit($val)
+    {
+        $this->query .= " LIMIT " . intval($val) . " ";
+
+        return $this;
+    }
+
     public function get()
     {
         $result = $this->fetch();

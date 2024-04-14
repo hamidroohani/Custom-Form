@@ -52,4 +52,14 @@ class UserController extends BaseController
 
         $this->redirect('/users');
     }
+
+    public function find()
+    {
+        $req = json_decode(file_get_contents('php://input'), true);
+        $name = $req['name'];
+        $users = new User();
+        $users = $users->where("email", "like", "%" . $name . "%")->orWhere("name", "like", "%" . $name . "%")->limit(5)->get();
+        echo json_encode($users);
+        die();
+    }
 }
