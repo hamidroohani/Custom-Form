@@ -104,4 +104,14 @@ abstract class DB
         $query = "INSERT INTO " . $this->table . " (`" . $keys . "`) VALUES ('" . $values . "')";
         mysqli_query($this->connstr, $query);
     }
+
+    public function raw($query)
+    {
+        $q = mysqli_query($this->connstr, $query);
+        $result = [];
+        while ($res = mysqli_fetch_assoc($q)) {
+            array_push($result, $res);
+        }
+        return $result;
+    }
 }
