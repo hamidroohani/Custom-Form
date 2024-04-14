@@ -48,6 +48,8 @@ class UserController extends BaseController
             'name' => $request['name'],
             'email' => $request['email'],
             'password' => md5($request['password']),
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ]);
 
         $this->redirect('/users');

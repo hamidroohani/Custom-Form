@@ -42,6 +42,8 @@ class OrderController extends BaseController
             'title' => $request['title'],
             'count' => $request['count'],
             'address' => $request['address'],
+            'created_at' => date("Y-m-d H:i:s"),
+            'updated_at' => date("Y-m-d H:i:s"),
         ]);
 
         $this->redirect('/orders');
