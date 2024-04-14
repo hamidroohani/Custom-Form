@@ -15,6 +15,8 @@ class Kernel
 
         $router->add("GET", "", \App\Controllers\HomeController::class, "index");
         $router->add("GET", "users", \App\Controllers\UserController::class, "index");
+        $router->add("GET", "users/create", \App\Controllers\UserController::class, "create");
+        $router->add("POST", "users/store", \App\Controllers\UserController::class, "store");
 
         try {
             echo $router->dispatch();
