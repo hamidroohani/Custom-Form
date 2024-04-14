@@ -5,7 +5,7 @@
         <input type="text" id="user_name" name="user_name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your user" required>
         <input type="hidden" name="user_id" id="user_id">
         <div id="user_results" class="absolute top-full w-full"></div>
-        <?php show_errors( "name"); ?>
+        <?php show_errors( "user_id"); ?>
     </div>
     <div class="mb-4">
         <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>

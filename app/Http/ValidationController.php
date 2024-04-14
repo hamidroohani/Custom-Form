@@ -6,7 +6,7 @@ class ValidationController
 {
     public static function required($request, $field)
     {
-        if (!isset($request[$field])) {
+        if (!isset($request[$field]) || $request[$field] == '') {
             return [$field => $field . " is required"];
         }
         return null;

@@ -27,6 +27,7 @@ class OrderController extends BaseController
         $validate = $this->validate($request, [
             "name" => "required|min 4",
             "count" => "required",
+            "user_id" => "required",
             "address" => "required|min 4",
         ]);
 
@@ -37,9 +38,10 @@ class OrderController extends BaseController
 
         $order = new Order();
         $order->create([
+            'user_id' => $request['user_id'],
             'name' => $request['name'],
             'count' => $request['count'],
-            'address' => md5($request['address']),
+            'address' => $request['address'],
         ]);
 
         $this->redirect('/orders');
