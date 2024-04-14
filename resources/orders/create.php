@@ -8,9 +8,9 @@
         <?php show_errors( "user_id"); ?>
     </div>
     <div class="mb-4">
-        <label for="name" class="block text-gray-700 font-bold mb-2">Name:</label>
-        <input type="text" id="name" name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your name" required>
-        <?php show_errors( "name"); ?>
+        <label for="title" class="block text-gray-700 font-bold mb-2">Title:</label>
+        <input type="text" id="title" name="title" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="Enter your title" required>
+        <?php show_errors( "title"); ?>
     </div>
     <div class="mb-4">
         <label for="count" class="block text-gray-700 font-bold mb-2">Count:</label>

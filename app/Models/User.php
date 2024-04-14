@@ -12,7 +12,7 @@ class User extends DB
     {
         parent::__construct();
         $this->table = "users";
-        $this->query = "select * from " . $this->table . " where 1 ";
+        $this->query = "select * from " . $this->table . " ";
         return $this;
     }
 }

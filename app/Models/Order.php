@@ -12,7 +12,7 @@ class Order extends DB
     {
         parent::__construct();
         $this->table = "orders";
-        $this->query = "select * from " . $this->table . " where 1 ";
+        $this->query = "select * from " . $this->table . " ";
         return $this;
     }
 }

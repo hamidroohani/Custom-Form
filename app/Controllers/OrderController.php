@@ -9,7 +9,7 @@ class OrderController extends BaseController
     public function index()
     {
         $orders = new Order();
-        $orders = $orders->get();
+        $orders = $orders->join('users', 'user_id')->get();
 
         $this->view("orders/list",['orders' => $orders]);
     }
@@ -25,7 +25,7 @@ class OrderController extends BaseController
 
         // validate
         $validate = $this->validate($request, [
-            "name" => "required|min 4",
+            "title" => "required|min 4",
             "count" => "required",
             "user_id" => "required",
             "address" => "required|min 4",
@@ -39,7 +39,7 @@ class OrderController extends BaseController
         $order = new Order();
         $order->create([
             'user_id' => $request['user_id'],
-            'name' => $request['name'],
+            'title' => $request['title'],
             'count' => $request['count'],
             'address' => $request['address'],
         ]);

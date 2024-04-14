@@ -9,6 +9,7 @@ abstract class DB
     public $connstr = null;
     public $table = "users";
     public $query = null;
+    public $where_count = 0;
 
     public $hostname = null;
 
@@ -36,7 +37,14 @@ abstract class DB
 
     public function where($field, $opr, $val)
     {
-        $this->query .= " and {$field} {$opr} '{$val}'";
+        if ($this->where_count > 0) {
+            $this->query .= " AND ";
+        } else {
+            $this->query .= " WHERE ";
+        }
+        $this->query .= " {$field} {$opr} '{$val}'";
+
+        $this->where_count++;
 
         return $this;
     }
@@ -51,6 +59,13 @@ abstract class DB
     public function limit($val)
     {
         $this->query .= " LIMIT " . intval($val) . " ";
+
+        return $this;
+    }
+
+    public function join($table, $field)
+    {
+        $this->query .= " JOIN {$table} ON {$this->table}.{$field} = {$table}.id ";
 
         return $this;
     }
