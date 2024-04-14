@@ -30,6 +30,14 @@ class UserController extends BaseController
             "password" => "required|min 4",
         ]);
 
+        $duplicate_user = new User();
+        $duplicate_user = $duplicate_user->where("email","=",$request['email'])->first();
+
+        if ($duplicate_user){
+            flash(['email' => ["The email is already taken"]]);
+            $this->redirect('/users/create');
+        }
+
         if (!empty($validate)) {
             flash($validate);
             $this->redirect('/users/create');
